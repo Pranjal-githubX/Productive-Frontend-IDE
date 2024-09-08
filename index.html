@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+
+</head>
+
+<body>
+    <div class="output">
+        <iframe></iframe>
+    </div>
+    <div class="k">
+    </div>
+    <main>
+        <img id="html-img" class="image" src="Assets/HTML.png" alt="">
+        <img id="css-img" class="image" src="Assets/CSS.webp" alt="">
+        <img id="js-img" class="image" src="Assets/JS.svg" alt="">
+
+        <div class="dialog">
+            <i class="ri-close-line"></i>
+            No need to write boiler plate! It's already prewritten
+        </div>
+        <div class="leftLine">
+            <div>
+                <i id="handleIcon" class="ri-file-line"></i>
+            </div>
+        </div>
+        <div class="sidebar">
+            <i class="ri-arrow-right-wide-line" id="min-bar"></i>
+            <div class="top">
+                <h1>EXPLORER</h1>
+            </div>
+            <div class="workspace">
+                <h1>CODEBASE <i class="ri-arrow-drop-down-line"></i></h1>
+                <div class="filesbar">
+                    <div class="box">
+                        <div class="bar">
+                            <div class="icon">
+                                <img src="Assets/HTML.png" alt="">
+                            </div>
+                            <h1>index.html</h1>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="bar">
+                            <div class="icon">
+                                <img src="Assets/CSS.webp" alt="">
+                            </div>
+                            <h1>style.css</h1>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="bar">
+                            <div class="icon">
+                                <img src="Assets/JS.svg" alt="">
+                            </div>
+                            <h1>script.js</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightBar">
+
+            <div class="topbar">
+                <div style="position: relative;">
+                    <div class="file file1 active">
+                        <h1>index.html</h1><!-- <i class="ri-close-line"></i> -->
+                    </div>
+                    <div class="file file2">
+                        <h1>style.css</h1><!-- <i class="ri-close-line"></i> -->
+                    </div>
+                    <div class="file file3">
+                        <h1>script.js</h1><!-- <i class="ri-close-line"></i> -->
+                    </div>
+                    <!-- <div class="iconParent">
+                        <i class="ri-volume-down-line"></i> 
+                    </div> -->
+                </div>
+                <!-- <i class="ri-arrow-left-right-line"></i> -->
+            </div>
+            
+
+            <div class="codeArea">
+                <textarea placeholder="Write Your HTML Code" wrap="off" id="html""></textarea>
+                <textarea placeholder=" Write your CSS code" wrap="off" id="css"></textarea>
+                <textarea placeholder="Write your JS code" wrap="off" id="js"></textarea>
+                <div class="line">
+                    <div class="newDiv">1</div>
+                </div>
+            </div>
+            <div class="bottom">
+                <!-- <h5 id="brand">Coditor</h5> -->
+                <img src="Assets/brand.png">
+                <h5 id="lineCount">Lines: 1</h5>
+                <h5 id="spaceCount">Spaces: 0</h5>
+                <h5 id="lang">HTML</h5>
+                <button class="run">Run Code</button>
+            </div>
+
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="JS/vars.js"> </script>
+    <script src="JS/normal.js"> </script>
+</body>
+
+</html>
+
