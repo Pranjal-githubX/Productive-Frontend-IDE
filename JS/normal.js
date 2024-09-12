@@ -337,14 +337,14 @@ function showFrame() {
     runBtn.addEventListener("click", () => {
         if (isopen == false) {
             output.style.top = '0';
-            runBtn.innerText = "Code Back";
+            // runBtn.innerText = "Code Back";
             isopen = true;
             HTML.style.zIndex = 0;
             CSS.style.zIndex = 0;
             JS.style.zIndex = 0;
         } else {
             output.style.top = '-100vh';
-            runBtn.innerText = "Run Code";
+            // runBtn.innerText = "Run Code";
             isopen = false;
             files.forEach((e) => {
                 if (e.innerText === "index.html") {
