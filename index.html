@@ -84,9 +84,10 @@
                     <div class="file file3">
                         <h1>script.js</h1><!-- <i class="ri-close-line"></i> -->
                     </div>
-                    <!-- <div class="iconParent">
-                        <i class="ri-volume-down-line"></i> 
-                    </div> -->
+                    <div class="iconParent">
+                        <i id = "soundBtn" style="display: none;" class="ri-volume-down-line"></i> 
+                        <i id = "mutedBtn" class="ri-volume-mute-line"></i>
+                    </div>
                 </div>
                 <!-- <i class="ri-arrow-left-right-line"></i> -->
             </div>
@@ -102,11 +103,14 @@
             </div>
             <div class="bottom">
                 <!-- <h5 id="brand">Coditor</h5> -->
-                <img src="Assets/brand.png">
-                <h5 id="lineCount">Lines: 1</h5>
-                <h5 id="spaceCount">Spaces: 0</h5>
-                <h5 id="lang">HTML</h5>
-                <button class="run">Run Code</button>
+                 <div class="first">
+                     <h5 id="lineCount">Lines: 1</h5>
+                     <h5 id="spaceCount">Spaces: 0</h5>
+                     <h5 id="lang">HTML</h5>
+                 </div>
+                     <button class="run"><i class="ri-play-line"></i>
+                     </button>
+
             </div>
 
         </div>
