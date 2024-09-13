@@ -771,14 +771,7 @@ function insertTagOnTab(keyword, openingTag, closingTag) {
         }
 
         // Function to handle button click
-        function soundHandler() {
-            handlerBtn.addEventListener("click", () => {
-                isAllowed = !isAllowed; // Toggle the `isAllowed` flag
-                updateEventListeners(); // Update event listeners based on the new flag value
-                // Change button text based on state
-                handlerBtn.textContent = isAllowed ? "Disable Typing Sound" : "Enable Typing Sound";
-            });
-        }
+       
 
         // Initialize event handlers
         soundHandler();
