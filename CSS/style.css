@@ -605,20 +605,3 @@ textarea {
     }
 }
 
-.onLoad {
-    height: 100vh;
-    width: 100%;
-    background-color: rgb(173, 216, 230);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    display: flex;
-}
-
-.onLoad>div {
-    height: 100%;
-    width: 20%;
-    background-color: rgb(147, 186, 244);
-    position: relative;
-}
