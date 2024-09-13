@@ -1,4 +1,22 @@
-
+function onLoadGsap(){
+    let tl = gsap.timeline()
+setTimeout(() => {
+    gsap.to(".onLoad>div", {
+        duration: .4,
+        bottom: "-100vh",
+        stagger: 0.2
+    })
+    gsap.to(".onLoad", {
+        backgroundColor: "transparent",
+        duration: 0.1
+    })
+    gsap.to(".onLoad", {
+        zIndex: 0,
+        delay: 1,
+    }) 
+}, 125);
+   
+}
 
 function runDefault() {
     box[0].classList.add("boxactive")
@@ -337,14 +355,12 @@ function showFrame() {
     runBtn.addEventListener("click", () => {
         if (isopen == false) {
             output.style.top = '0';
-            // runBtn.innerText = "Code Back";
             isopen = true;
             HTML.style.zIndex = 0;
             CSS.style.zIndex = 0;
             JS.style.zIndex = 0;
         } else {
             output.style.top = '-100vh';
-            // runBtn.innerText = "Run Code";
             isopen = false;
             files.forEach((e) => {
                 if (e.innerText === "index.html") {
@@ -523,17 +539,17 @@ function dropdown() {
     })
 }
 function tabHandler() {
-editors.forEach((elem) => {
-elem.addEventListener('keydown', function (e) {
-    if (e.key === 'Tab') {
-        e.preventDefault();
-        let start = this.selectionStart;
-        let end = this.selectionEnd;
-        this.value = this.value.substring(0, start) + '\t' + this.value.substring(end);
-        this.selectionStart = this.selectionEnd = start + 1;
-    }
-});
-})
+    editors.forEach((elem) => {
+        elem.addEventListener('keydown', function (e) {
+            if (e.key === 'Tab') {
+                e.preventDefault();
+                let start = this.selectionStart;
+                let end = this.selectionEnd;
+                this.value = this.value.substring(0, start) + '\t' + this.value.substring(end);
+                this.selectionStart = this.selectionEnd = start + 1;
+            }
+        });
+    })
 }
 function sidebarHoveringAction() {
     sidebar.addEventListener("mouseenter", () => {
@@ -649,21 +665,21 @@ function iconsAnimation() {
 // }
 // })
 // }
-function spec(){
+function spec() {
     CSS.addEventListener("keydown", (e) => {
         if (e.key === 'Enter') {
             e.preventDefault(); // Prevent the default newline behavior
             const start = CSS.selectionStart;
             const end = CSS.selectionEnd;
-    
+
             // Get the character before the cursor
             const charBeforeCursor = CSS.value[start - 1];
-    
+
             // Check if the character is '{' or ';' to apply indent
             if (charBeforeCursor === '{' || charBeforeCursor === ';') {
                 // Insert new line and tab for indentation
                 CSS.value = CSS.value.substring(0, start) + "\n\t " + CSS.value.substring(end);
-    
+
                 // Move the cursor to the right place
                 CSS.selectionStart = CSS.selectionEnd = start + 2; // After \n\t
             } else {
@@ -747,37 +763,44 @@ function insertTagOnTab(keyword, openingTag, closingTag) {
     });
 }
 
+       
 
-function onTypeSound() {
-    const sound = new Audio("Assets/main.mp3")
-    document.querySelectorAll("textarea").forEach((e) => {
-
-        e.addEventListener("keydown", (e) => {
-            sound.pause()
-            sound.play()
-            if (e.key == "Enter") {
-                sound.pause()
-                sound.play()
+        // Function to play sound
+        function playSound(e) {
+            if (isAllowed){
+            if (["Enter", "Control", "Shift", "Alt"].includes(e.key)) {
+                sound.pause();
+                sound.currentTime = 0; // Reset sound to start
+                sound.play();
             }
-            else if (e.key == "Control") {
-                sound.pause()
-                sound.play()
+        }
+        }
 
-            }
-            else if (e.key == "Shift") {
-                sound.pause()
-                sound.play()
+        // Function to add or remove event listeners based on `isAllowed`
+        function updateEventListeners() {
+            document.querySelectorAll("textarea").forEach((e) => {
+                if (isAllowed) {
+                    e.addEventListener("keydown", playSound);
+                    
+                } else {
+                    e.removeEventListener("keydown", playSound);
+                }
+            });
+        }
 
-            }
-            else if (e.key == "Alt") {
-                sound.pause()
-                sound.play()
+        // Function to handle button click
+        function soundHandler() {
+            handlerBtn.addEventListener("click", () => {
+                isAllowed = !isAllowed; // Toggle the `isAllowed` flag
+                updateEventListeners(); // Update event listeners based on the new flag value
+                // Change button text based on state
+                handlerBtn.textContent = isAllowed ? "Disable Typing Sound" : "Enable Typing Sound";
+            });
+        }
 
-            }
-        })
-    })
-
-}
+        // Initialize event handlers
+        soundHandler();
+        updateEventListeners(); // Ensure initial state is set correctly
 insertTagOnTab('!', `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -800,7 +823,7 @@ insertTagOnTab('html:5', `<!DOCTYPE html>
 <body>
 </body>
 </html>`, '')
-
+onLoadGsap()
 insertTagOnTab('a', '<a>', '</a>')
 insertTagOnTab('html', '<html>', '</html>')
 insertTagOnTab('head', '<head>', '</head>')
