@@ -759,16 +759,16 @@ function insertTagOnTab(keyword, openingTag, closingTag) {
         // }
 
         // Function to add or remove event listeners based on `isAllowed`
-        function updateEventListeners() {
-            document.querySelectorAll("textarea").forEach((e) => {
-                if (isAllowed) {
-                    e.addEventListener("keydown", playSound);
+        // function updateEventListeners() {
+        //     document.querySelectorAll("textarea").forEach((e) => {
+        //         if (isAllowed) {
+        //             e.addEventListener("keydown", playSound);
                     
-                } else {
-                    e.removeEventListener("keydown", playSound);
-                }
-            });
-        }
+        //         } else {
+        //             e.removeEventListener("keydown", playSound);
+        //         }
+        //     });
+        // }
 
         // Function to handle button click
         // function soundHandler() {
@@ -781,8 +781,8 @@ function insertTagOnTab(keyword, openingTag, closingTag) {
         // }
 
         // Initialize event handlers
-        soundHandler();
-        updateEventListeners(); // Ensure initial state is set correctly
+        // soundHandler();
+        // updateEventListeners(); // Ensure initial state is set correctly
 insertTagOnTab('!', `<!DOCTYPE html>
 <html lang="en">
 <head>
