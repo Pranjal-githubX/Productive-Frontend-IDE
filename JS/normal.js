@@ -748,15 +748,15 @@ function insertTagOnTab(keyword, openingTag, closingTag) {
        
 
         // Function to play sound
-        function playSound(e) {
-            if (isAllowed){
-            if (["Enter", "Control", "Shift", "Alt"].includes(e.key)) {
-                sound.pause();
-                sound.currentTime = 0; // Reset sound to start
-                sound.play();
-            }
-        }
-        }
+        // function playSound(e) {
+        //     if (isAllowed){
+        //     if (["Enter", "Control", "Shift", "Alt"].includes(e.key)) {
+        //         sound.pause();
+        //         sound.currentTime = 0; // Reset sound to start
+        //         sound.play();
+        //     }
+        // }
+        // }
 
         // Function to add or remove event listeners based on `isAllowed`
         function updateEventListeners() {
@@ -771,14 +771,14 @@ function insertTagOnTab(keyword, openingTag, closingTag) {
         }
 
         // Function to handle button click
-        function soundHandler() {
-            handlerBtn.addEventListener("click", () => {
-                isAllowed = !isAllowed; // Toggle the `isAllowed` flag
-                updateEventListeners(); // Update event listeners based on the new flag value
-                // Change button text based on state
-                handlerBtn.textContent = isAllowed ? "Disable Typing Sound" : "Enable Typing Sound";
-            });
-        }
+        // function soundHandler() {
+        //     handlerBtn.addEventListener("click", () => {
+        //         isAllowed = !isAllowed; // Toggle the `isAllowed` flag
+        //         updateEventListeners(); // Update event listeners based on the new flag value
+        //         // Change button text based on state
+        //         handlerBtn.textContent = isAllowed ? "Disable Typing Sound" : "Enable Typing Sound";
+        //     });
+        // }
 
         // Initialize event handlers
         soundHandler();
