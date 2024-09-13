@@ -1,22 +1,4 @@
-function onLoadGsap(){
-    let tl = gsap.timeline()
-setTimeout(() => {
-    gsap.to(".onLoad>div", {
-        duration: .4,
-        bottom: "-100vh",
-        stagger: 0.2
-    })
-    gsap.to(".onLoad", {
-        backgroundColor: "transparent",
-        duration: 0.1
-    })
-    gsap.to(".onLoad", {
-        zIndex: 0,
-        delay: 1,
-    }) 
-}, 125);
-   
-}
+
 
 function runDefault() {
     box[0].classList.add("boxactive")
@@ -823,7 +805,6 @@ insertTagOnTab('html:5', `<!DOCTYPE html>
 <body>
 </body>
 </html>`, '')
-onLoadGsap()
 insertTagOnTab('a', '<a>', '</a>')
 insertTagOnTab('html', '<html>', '</html>')
 insertTagOnTab('head', '<head>', '</head>')
