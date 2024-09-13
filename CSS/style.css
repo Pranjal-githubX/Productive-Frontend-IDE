@@ -1,13 +1,9 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 html {
     font-size: 16px;
     user-select: none; 
     /* padding: 12px; */
 }
-
-
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +11,6 @@ html {
     font-family: 'poppins', sans-serif;
     color: #fff;
 }
-
 html,
 body {
     height: 100%;
@@ -23,12 +18,10 @@ body {
     max-height: 100vh;
     overflow-y: hidden;
 }
-
 body {
     background-color: #fff;
     position: relative;
 }
-
 main {
     height: 97%;
     width: 100%;
@@ -38,7 +31,6 @@ main {
     bottom: 0;
     padding: 8px;
 }
-
 .sidebar {
     height: 100%;
     width: 15%;
@@ -57,23 +49,20 @@ main {
     display: flex;
     background-color: #222222;
     align-items: center;
+  
     justify-content: space-between;
     padding: 0 20px 0 0;
-
 }
-
 .topbar div {
     display: flex;
     height: 100%;
 }
-
 .topbar>i {
     font-size: 15px;
     color: rgb(255, 255, 255);
     position: absolute;
     right: 15px;
 }
-
 .topbar .file {
     height: 100%;
     width: 130px;
@@ -86,7 +75,6 @@ main {
     transition: all .3;
     cursor: pointer;
 }
-
 .file>h1 {
     height: 100%;
     width: 100%;
@@ -103,18 +91,16 @@ main {
 
 .file:hover {
     transition: background-color .2s;
-    
-}
 
+}
+  
 /*
 .file:hover i {
     color: rgb(225, 225, 225);
 } */
-
 .file i {
     color: white
 }
-
 .active,
 .focused {
     border-bottom: 1.3px solid #4B34D3;
@@ -127,8 +113,8 @@ main {
     min-width: 0;
     position: relative;
     background-color: #1A183D;
+  
 }
-
 .codeArea * {
     background-color: #1A183D;
 }
@@ -153,18 +139,16 @@ textarea {
 }
 
 #html {
+  
     z-index: 3;
     font-weight: 100;
 }
-
 #css {
     z-index: 2;
 }
-
 #js {
     z-index: 1;
 }
-
 textarea {
     scrollbar-width: thin;
     scrollbar-color: #4c566a #2e3440;
@@ -172,40 +156,32 @@ textarea {
     width: 98%;
     right: 0;
 }
-
 textarea::-webkit-scrollbar {
     width: 12px;
 }
-
 textarea::-webkit-scrollbar-track {
     background: #2e3440;
     border-radius: 5px;
 }
-
 textarea::-webkit-scrollbar-thumb {
     background-color: #4c566a;
     border-radius: 5px;
     border: 3px solid #2e3440;
 }
-
 textarea::-webkit-scrollbar-thumb:hover {
     background-color: #5e81ac;
 }
-
 textarea::selection {
     background: #5e81ac;
     color: #eceff4;
 }
-
 textarea::-moz-selection {
     background: #5e81ac;
     color: #eceff4;
 }
-
 textarea:focus {
     outline: none;
 }
-
 .bottom {
     height: 5%;
     width: 100%;
@@ -230,7 +206,6 @@ h5 {
     font-weight: 400;
     color: rgb(255, 255, 255);
 }
-
 h5#brand {
     font-weight: 400;
     font-size: 18px;
@@ -251,10 +226,10 @@ h5#brand {
     transition: all .2s;
 }
 
+  
 .bottom button:hover {
     background-color: #4731c5c0;
 }
-
 .output {
     height: 100vh;
     width: 100%;
@@ -264,7 +239,6 @@ h5#brand {
     background-color: white;
     transition: all .5s;
 }
-
 iframe {
     height: 100%;
     width: 100%;
@@ -272,10 +246,9 @@ iframe {
     border: none;
 }
 
-
 .line {
     height: 100%;
-    /* width: 1%; */
+    width: 1%;
     /* position: absolute; */
     left: 0;
     z-index: 10;
@@ -301,22 +274,18 @@ iframe {
     position: relative;
     background-color: #0c0a2b;
     /* border: none; */
-
 }
-
 .sidebar .top {
     width: 100%;
     /* height: 30px; */
     padding: 28px 18px;
     /* background-color: crimson; */
 }
-
 .top h1 {
     font-size: 14px;
     font-weight: 400;
     color: white;
 }
-
 .workspace>h1 {
     display: flex;
     align-items: center;
@@ -324,24 +293,20 @@ iframe {
     color: white;
     font-weight: 400;
 }
-
 .workspace>h1:nth-of-type(1) {
     font-size: 16px;
     margin: 0 26px;
 }
-
 .workspace>h1 i {
     font-size: 23px;
     font-weight: 100;
     rotate: 90deg;
 }
-
 .filesbar {
     margin: 12px 0;
     padding: 2px 40px;
     overflow: hidden;
 }
-
 .filesbar .bar {
     height: 100%;
     width: 85%;
@@ -349,25 +314,21 @@ iframe {
     align-items: center;
     gap: .8vw;
 }
-
 .box {
     height: 32px;
     width: 100%;
     margin: 1.5px 0;
     cursor: pointer;
 }
-
 .box:hover {
     background-color: #423dda;
     transition: all .3s;
 }
-
 .bar h1 {
     font-size: 13px;
     font-weight: 400;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
 .bar .icon {
     height: 15px;
     display: flex;
@@ -375,22 +336,17 @@ iframe {
     align-items: center;
     margin-left: 6px;
 }
-
 .bar .icon img {
     height: 100%;
     width: 100%;
 }
-
 .bar h1:hover {
     transition: all .2s;
     color: white;
 }
-
 .topbar {
     background-color: #0E0B33;
-
 }
-
 .topbar div button {
     color: black;
     background-color: transparent;
@@ -400,11 +356,9 @@ iframe {
     top: 10px;
     border-radius: 50%;
 }
-
 button img {
     object-fit: cover;
 }
-
 .dialog {
     height: 70px;
     display: flex;
@@ -436,18 +390,14 @@ button img {
         rotate: 180deg;
     }
 }
-
 .boxactive {
     background-color: #222044;
 }
-
 .workspace {
     transition: all .2s;
     max-height: 140px;
     color: white;
-
 }
-
 .boxactive:hover {
     background-color: #303030;
     transition: all .3s;
@@ -455,11 +405,9 @@ button img {
 .newDiv{
     color: #929292;
 }
-
 .sidebar {
     min-width: 300px;
 }
-
 .sidebar i#min-bar {
     font-size: 22px;
     position: absolute;
@@ -469,17 +417,13 @@ button img {
     transition: all .15s;
     opacity: 0;
 }
-
 .run {
     background-color: #4631C5;
 }
-
-
 .sidebar {
     transition: all .3s;
     overflow: hidden;
 }
-
 .leftLine {
     width: 3%;
     height: 100vh;
@@ -488,15 +432,12 @@ button img {
     min-width: 51px;
     padding: 13px 0;
 }
-
 .leftLine div i {
     font-size: 30px;
 }
-
 .leftLine div i:hover {
     color: rgba(224, 224, 224, 0.877);
 }
-
 .leftLine div {
     height: 50px;
     width: 100%;
@@ -505,7 +446,6 @@ button img {
     justify-content: center;
     align-items: center;
 }
-
 .bottom img {
     height: 30px;
     width: 30px;
@@ -513,13 +453,11 @@ button img {
     object-position: center;
     border-radius: 50%;
 }
-
 .line>*,
 textarea {
     line-height: 1.1;
     letter-spacing: 1;
 }
-
 .k {
     height: 3%;
     width: 100%;
@@ -534,7 +472,6 @@ textarea {
 .k i{
     font-size: 20px;
 }
-
 .image{
     height: 80px;
     /* width: 30px; */
@@ -546,7 +483,6 @@ textarea {
     opacity: 0;
     transition: all .3s;
 }
-
 .iconParent{
     /* background-color: red; */
     display: flex;
@@ -554,7 +490,6 @@ textarea {
     align-items: center;
     width: 30px;
 }
-
 .iconParent i{
     font-size: 16px;
     font-weight: 100;
