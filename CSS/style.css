@@ -134,7 +134,7 @@ textarea {
     position: absolute;
     right: 0;
     color: rgb(255, 255, 255);
-    font-weight: lighter !important;
+    font-weight: 500 !important;
     font-family: cursive;
     z-index: 5;
     /* color: transparent; */
