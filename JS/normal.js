@@ -1,5 +1,3 @@
-
-
 function runDefault() {
     box[0].classList.add("boxactive")
     editors.forEach((e) => {
@@ -8,10 +6,14 @@ function runDefault() {
     document.querySelectorAll("img").forEach(e => {
         e.setAttribute("draggable", "false")
     })
-
+    
 
 }
-
+gsap.from(".file", {
+    opacity: 0,
+    duration: 1,
+    stagger: 0.3
+})
 function fileListeners() {
 
     files.forEach((file) => {
@@ -271,16 +273,24 @@ document.querySelectorAll(".bar").forEach((bar) => {
     });
 
 });
+
 function runHandle() {
 
     runBtn.addEventListener("click", () => {
         if (!isopen) {
-            setTimeout(outputFunc, 400)
-            document.querySelector(".line").style.display = "none"
+            document.querySelectorAll(".newDiv").forEach(e => {
+                e.style.display = "none"
+                setTimeout(outputFunc, 400)
+            })
         }
         else {
             combinedCode = ``
-            document.querySelector(".line").style.display = "block  "
+            setTimeout(() => {
+                document.querySelectorAll(".newDiv").forEach(e => {
+                    // e.style.display = "block"
+
+                })
+            }, 900)
         }
     })
 }
@@ -745,44 +755,44 @@ function insertTagOnTab(keyword, openingTag, closingTag) {
     });
 }
 
-       
 
-        // Function to play sound
-        // function playSound(e) {
-        //     if (isAllowed){
-        //     if (["Enter", "Control", "Shift", "Alt"].includes(e.key)) {
-        //         sound.pause();
-        //         sound.currentTime = 0; // Reset sound to start
-        //         sound.play();
-        //     }
-        // }
-        // }
 
-        // Function to add or remove event listeners based on `isAllowed`
-        // function updateEventListeners() {
-        //     document.querySelectorAll("textarea").forEach((e) => {
-        //         if (isAllowed) {
-        //             e.addEventListener("keydown", playSound);
-                    
-        //         } else {
-        //             e.removeEventListener("keydown", playSound);
-        //         }
-        //     });
-        // }
+// Function to play sound
+function playSound(e) {
+    if (isAllowed) {
+        if (["Enter", "Control", "Shift", "Alt"].includes(e.key)) {
+            sound.pause();
+            sound.currentTime = 0; // Reset sound to start
+            sound.play();
+        }
+    }
+}
 
-        // Function to handle button click
-        // function soundHandler() {
-        //     handlerBtn.addEventListener("click", () => {
-        //         isAllowed = !isAllowed; // Toggle the `isAllowed` flag
-        //         updateEventListeners(); // Update event listeners based on the new flag value
-        //         // Change button text based on state
-        //         handlerBtn.textContent = isAllowed ? "Disable Typing Sound" : "Enable Typing Sound";
-        //     });
-        // }
+// Function to add or remove event listeners based on `isAllowed`
+function updateEventListeners() {
+    document.querySelectorAll("textarea").forEach((e) => {
+        if (isAllowed) {
+            e.addEventListener("keydown", playSound);
 
-        // Initialize event handlers
-        // soundHandler();
-        // updateEventListeners(); // Ensure initial state is set correctly
+        } else {
+            e.removeEventListener("keydown", playSound);
+        }
+    });
+}
+
+// Function to handle button click
+function soundHandler() {
+    handlerBtn.addEventListener("click", () => {
+        isAllowed = !isAllowed; // Toggle the `isAllowed` flag
+        updateEventListeners(); // Update event listeners based on the new flag value
+        // Change button text based on state
+        handlerBtn.textContent = isAllowed ? "Disable Typing Sound" : "Enable Typing Sound";
+    });
+}
+
+// Initialize event handlers
+soundHandler();
+updateEventListeners(); // Ensure initial state is set correctly
 insertTagOnTab('!', `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -805,7 +815,18 @@ insertTagOnTab('html:5', `<!DOCTYPE html>
 <body>
 </body>
 </html>`, '')
+function syntaxHighlight() {
+    const editor = document.getElementById('html');
+    const highlighted = document.querySelector('codeShow');
 
+    editor.addEventListener('input', () => {
+        highlighted.textContent = editor.innerText;
+        Prism.highlightElement(highlighted);
+    });
+}
+
+showPreview()
+syntaxHighlight()
 insertTagOnTab('a', '<a>', '</a>')
 insertTagOnTab('html', '<html>', '</html>')
 insertTagOnTab('head', '<head>', '</head>')
@@ -928,4 +949,6 @@ dropdown()
 sidebarHoveringAction()
 iconsAnimation()
 // onTypeSound()
-// calling()
+// calling()    
+// outputFunc()
+showPreview()
