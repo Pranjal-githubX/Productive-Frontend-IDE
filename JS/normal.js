@@ -476,7 +476,7 @@ function boilerplateAlert() {
 
 
     })
-} let gridType = 'default';
+} 
 
 // function changePreview() {
 // gridBtn.addEventListener("click", () => {
@@ -758,41 +758,12 @@ function insertTagOnTab(keyword, openingTag, closingTag) {
 
 
 // Function to play sound
-function playSound(e) {
-    if (isAllowed) {
-        if (["Enter", "Control", "Shift", "Alt"].includes(e.key)) {
-            sound.pause();
-            sound.currentTime = 0; // Reset sound to start
-            sound.play();
-        }
-    }
-}
 
 // Function to add or remove event listeners based on `isAllowed`
-function updateEventListeners() {
-    document.querySelectorAll("textarea").forEach((e) => {
-        if (isAllowed) {
-            e.addEventListener("keydown", playSound);
-
-        } else {
-            e.removeEventListener("keydown", playSound);
-        }
-    });
-}
-
-// Function to handle button click
-function soundHandler() {
-    handlerBtn.addEventListener("click", () => {
-        isAllowed = !isAllowed; // Toggle the `isAllowed` flag
-        updateEventListeners(); // Update event listeners based on the new flag value
-        // Change button text based on state
-        handlerBtn.textContent = isAllowed ? "Disable Typing Sound" : "Enable Typing Sound";
-    });
-}
 
 // Initialize event handlers
-soundHandler();
-updateEventListeners(); // Ensure initial state is set correctly
+// soundHandler();
+// updateEventListeners(); // Ensure initial state is set correctly
 insertTagOnTab('!', `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -815,15 +786,15 @@ insertTagOnTab('html:5', `<!DOCTYPE html>
 <body>
 </body>
 </html>`, '')
-function syntaxHighlight() {
-    const editor = document.getElementById('html');
-    const highlighted = document.querySelector('codeShow');
+// function syntaxHighlight() {
+//     const editor = document.getElementById('html');
+//     const highlighted = document.querySelector('codeShow');
 
-    editor.addEventListener('input', () => {
-        highlighted.textContent = editor.innerText;
-        Prism.highlightElement(highlighted);
-    });
-}
+//     editor.addEventListener('input', () => {
+//         highlighted.textContent = editor.innerText;
+//         Prism.highlightElement(highlighted);
+//     });
+// }
 
 showPreview()
 syntaxHighlight()
