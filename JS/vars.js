@@ -1,3 +1,4 @@
+let x = false
 var runBtn = document.querySelector(".bottom button");
 var isopen = false;
 var output = document.querySelector(".output");
