@@ -796,8 +796,6 @@ insertTagOnTab('html:5', `<!DOCTYPE html>
 //     });
 // }
 
-showPreview()
-syntaxHighlight()
 insertTagOnTab('a', '<a>', '</a>')
 insertTagOnTab('html', '<html>', '</html>')
 insertTagOnTab('head', '<head>', '</head>')
