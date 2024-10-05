@@ -91,7 +91,11 @@ main {
 
 .file:hover {
     transition: background-color .2s;
-
+    background-color: #2b53e4;
+    
+}
+.file:hover h1{
+    color: #000;
 }
   
 /*
@@ -104,8 +108,8 @@ main {
 .active,
 .focused {
     border-bottom: 1.3px solid #4B34D3;
+    /* background-color: #020e38; */
     /* border: none; */
-    /* background-color: #1F1F1F; */
 }
 
 .codeArea {
@@ -115,14 +119,11 @@ main {
     background-color: #1A183D;
   
 }
-.codeArea * {
-    background-color: #1A183D;
-}
 
 textarea {
     height: 100%;
     width: 85%;
-    background-color: #1F1F1F;
+    background-color: #ffffff00;
     color: #000000;
     padding: 5px 35px;
     resize: none;
@@ -134,8 +135,9 @@ textarea {
     right: 0;
     color: rgb(255, 255, 255);
     font-weight: lighter !important;
-    font-family: "poppins", sans-serif;
-
+    font-family: cursive;
+    z-index: 5;
+    /* color: transparent; */
 }
 
 #html {
@@ -145,9 +147,11 @@ textarea {
 }
 #css {
     z-index: 2;
+    display: none;
 }
 #js {
     z-index: 1;
+    display: none;
 }
 textarea {
     scrollbar-width: thin;
@@ -285,6 +289,9 @@ iframe {
     font-size: 14px;
     font-weight: 400;
     color: white;
+}
+.workspace{
+    opacity: 0;
 }
 .workspace>h1 {
     display: flex;
@@ -540,3 +547,21 @@ textarea {
         width: 100vw;
      }
 }
+/* 
+main, .output{
+    height: 100vh;
+    width: 50vw;
+}
+.output{
+    position: fixed;
+}
+iframe{
+    height: 100vh;
+    width: 50%;
+}
+.output, iframe{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 0;
+} */
