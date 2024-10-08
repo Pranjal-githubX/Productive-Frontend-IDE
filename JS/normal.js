@@ -21,8 +21,8 @@ function fileListeners() {
         file.addEventListener('click', () => {
             if (file.innerText == "index.html") {
                 HTML.style.zIndex = 10;
-                CSS.style.zIndex = 2;
-                JS.style.zIndex = 0;
+                CSS.style.zIndex = -1;
+                JS.style.zIndex = -2;
                 lang.innerText = "HTML"
                 currentArea = 'index.html'
 
@@ -59,8 +59,8 @@ function fileListeners() {
 
             } else if (file.innerText == "style.css") {
                 CSS.style.zIndex = 10;
-                HTML.style.zIndex = 2;
-                JS.style.zIndex = 1;
+                HTML.style.zIndex = -1;
+                JS.style.zIndex = -2;
                 lang.innerText = "CSS"
                 currentArea = 'style.css'
 
@@ -95,8 +95,8 @@ function fileListeners() {
 
             } else {
                 JS.style.zIndex = 10;
-                HTML.style.zIndex = 2;
-                CSS.style.zIndex = 1;
+                HTML.style.zIndex = -2;
+                CSS.style.zIndex = -1;
                 lang.innerText = "JS"
                 currentArea = 'script.js'
 
@@ -144,8 +144,8 @@ document.querySelectorAll(".bar").forEach((bar) => {
     bar.addEventListener('click', () => {
         if (bar.innerText == "index.html") {
             HTML.style.zIndex = 10;
-            CSS.style.zIndex = 2;
-            JS.style.zIndex = 0;
+            CSS.style.zIndex = -2;
+            JS.style.zIndex = -1;
             lang.innerText = "HTML"
             currentArea = 'index.html'
 
@@ -188,8 +188,8 @@ document.querySelectorAll(".bar").forEach((bar) => {
 
         } else if (bar.innerText == "style.css") {
             CSS.style.zIndex = 10;
-            HTML.style.zIndex = 2;
-            JS.style.zIndex = 1;
+            HTML.style.zIndex = -2;
+            JS.style.zIndex = -1;
             lang.innerText = "CSS"
             currentArea = 'style.css'
 
@@ -228,9 +228,9 @@ document.querySelectorAll(".bar").forEach((bar) => {
             })
             box[1].classList.add("boxactive")
         } else {
-            JS.style.zIndex = 10;
-            HTML.style.zIndex = 2;
-            CSS.style.zIndex = 1;
+            JS.style. = 10;
+            HTML.style. = -2;
+            CSS.style. = -1;
             lang.innerText = "JS"
             currentArea = 'script.js'
 
@@ -343,42 +343,42 @@ function modifiedOutputFunc() {
 
     });
 }
-function showFrame() {
-    runBtn.addEventListener("click", () => {
-        if (isopen == false) {
-            output.style.top = '0';
-            isopen = true;
-            HTML.style.zIndex = 0;
-            CSS.style.zIndex = 0;
-            JS.style.zIndex = 0;
-        } else {
-            output.style.top = '-100vh';
-            isopen = false;
-            files.forEach((e) => {
-                if (e.innerText === "index.html") {
-                    if (e.classList.contains("active")) {
-                        HTML.style.zIndex = 3
-                        CSS.style.zIndex = 2
-                        JS.style.zIndex = 2
-                    }
-                } else if (e.innerText === "style.css") {
-                    if (e.classList.contains("active")) {
-                        CSS.style.zIndex = 3
-                        JS.style.zIndex = 2
-                        HTML.style.zIndex = 2
-                    }
-                } else {
-                    if (e.classList.contains("active")) {
-                        CSS.style.zIndex = 2
-                        JS.style.zIndex = 2
-                        HTML.style.zIndex = 2
-                    }
-                }
-            });
+// function showFrame() {
+//     runBtn.addEventListener("click", () => {
+//         if (isopen == false) {
+//             output.style.top = '0';
+//             isopen = true;
+//             HTML.style.zIndex = 0;
+//             CSS.style.zIndex = 0;
+//             JS.style.zIndex = 0;
+//         } else {
+//             output.style.top = '-100vh';
+//             isopen = false;
+//             files.forEach((e) => {
+//                 if (e.innerText === "index.html") {
+//                     if (e.classList.contains("active")) {
+//                         HTML.style.zIndex = 3
+//                         CSS.style.zIndex = 2
+//                         JS.style.zIndex = 2
+//                     }
+//                 } else if (e.innerText === "style.css") {
+//                     if (e.classList.contains("active")) {
+//                         CSS.style.zIndex = 3
+//                         JS.style.zIndex = 2
+//                         HTML.style.zIndex = 2
+//                     }
+//                 } else {
+//                     if (e.classList.contains("active")) {
+//                         CSS.style.zIndex = 2
+//                         JS.style.zIndex = 2
+//                         HTML.style.zIndex = 2
+//                     }
+//                 }
+//             });
 
-        }
-    });
-}
+//         }
+//     });
+// }
 
 
 function syncScroll() {
