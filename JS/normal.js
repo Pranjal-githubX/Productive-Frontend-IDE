@@ -6,7 +6,9 @@ function runDefault() {
     document.querySelectorAll("img").forEach(e => {
         e.setAttribute("draggable", "false")
     })
-    
+    HTML.style.zIndex = 10;
+    CSS.style.zIndex = -2;
+    JS.style.zIndex=-1
 
 }
 gsap.from(".file", {
@@ -20,6 +22,7 @@ function fileListeners() {
         lineCounterUpdation()
         file.addEventListener('click', () => {
             if (file.innerText == "index.html") {
+                console.log('HTML');
                 HTML.style.zIndex = 10;
                 CSS.style.zIndex = -1;
                 JS.style.zIndex = -2;
@@ -58,6 +61,7 @@ function fileListeners() {
                 syncScroll();
 
             } else if (file.innerText == "style.css") {
+                console.log('CSS');
                 CSS.style.zIndex = 10;
                 HTML.style.zIndex = -1;
                 JS.style.zIndex = -2;
@@ -94,6 +98,7 @@ function fileListeners() {
                 box[1].classList.add("boxactive")
 
             } else {
+                console.log('JS');
                 JS.style.zIndex = 10;
                 HTML.style.zIndex = -2;
                 CSS.style.zIndex = -1;
@@ -343,42 +348,41 @@ function modifiedOutputFunc() {
 
     });
 }
-// function showFrame() {
-//     runBtn.addEventListener("click", () => {
-//         if (isopen == false) {
-//             output.style.top = '0';
-//             isopen = true;
-//             HTML.style.zIndex = 0;
-//             CSS.style.zIndex = 0;
-//             JS.style.zIndex = 0;
-//         } else {
-//             output.style.top = '-100vh';
-//             isopen = false;
-//             files.forEach((e) => {
-//                 if (e.innerText === "index.html") {
-//                     if (e.classList.contains("active")) {
-//                         HTML.style.zIndex = 3
-//                         CSS.style.zIndex = 2
-//                         JS.style.zIndex = 2
-//                     }
-//                 } else if (e.innerText === "style.css") {
-//                     if (e.classList.contains("active")) {
-//                         CSS.style.zIndex = 3
-//                         JS.style.zIndex = 2
-//                         HTML.style.zIndex = 2
-//                     }
-//                 } else {
-//                     if (e.classList.contains("active")) {
-//                         CSS.style.zIndex = 2
-//                         JS.style.zIndex = 2
-//                         HTML.style.zIndex = 2
-//                     }
-//                 }
-//             });
+function showFrame() {
+    runBtn.addEventListener("click", () => {
+        if (isopen == false) {
+            output.style.top = '0';
+            isopen = true;
+            HTML.style.zIndex = 0;
+            CSS.style.zIndex = 0;
+            JS.style.zIndex = 0;
+        } else {
+            output.style.top = '-100vh';
+            isopen = false;
+            files.forEach((e) => {
+                if (currentArea === "index.html") {
+                    if (e.classList.contains("active")) {
+                        HTML.style.zIndex = 10
+                        CSS.style.zIndex = -2
+                        JS.style.zIndex = -1
+                    }
+                } else if (currentArea === "style.css") {
+                    if (e.classList.contains("active")) {
+                        CSS.style.zIndex = 10
+                        JS.style.zIndex = -2
+                        HTML.style.zIndex = -1
+                    }
+                } else if (currentArea == "script.js") {
+                    JS.style.zIndex = 10
+                    CSS.style.zIndex = -1
+                    HTML.style.zIndex = -2
 
-//         }
-//     });
-// }
+                }
+            });
+
+        }
+    });
+}
 
 
 function syncScroll() {
@@ -911,9 +915,9 @@ addFeature("`", "`")
 addFeature('<', '>')
 addFeature('`', '`')
 newAddFeature(':', ';')
-showFrame()
 fileListeners()
 boilerplateAlert()
 dropdown()
 sidebarHoveringAction()
 iconsAnimation()
+showFrame()
