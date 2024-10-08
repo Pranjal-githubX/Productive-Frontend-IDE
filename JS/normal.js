@@ -228,9 +228,9 @@ document.querySelectorAll(".bar").forEach((bar) => {
             })
             box[1].classList.add("boxactive")
         } else {
-            JS.style. = 10;
-            HTML.style. = -2;
-            CSS.style. = -1;
+            JS.style.zIndex = 10;
+            HTML.style.zIndex = -2;
+            CSS.style.zIndex = -1;
             lang.innerText = "JS"
             currentArea = 'script.js'
 
