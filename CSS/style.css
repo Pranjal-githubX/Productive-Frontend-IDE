@@ -147,11 +147,11 @@ textarea {
 }
 #css {
     z-index: 2;
-    display: none;
+/*     display: none; */
 }
 #js {
     z-index: 1;
-    display: none;
+/*     display: none; */
 }
 textarea {
     scrollbar-width: thin;
