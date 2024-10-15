@@ -1,5 +1,8 @@
-// let tl = tl.timeline()
 let tl = gsap.timeline()
+tl.to("body", {
+    display: "block",
+    delay: 0.1
+})
 tl.from("body", {
     opacity: 0,
     delay: 1
