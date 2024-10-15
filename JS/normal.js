@@ -280,8 +280,9 @@ document.querySelectorAll(".bar").forEach((bar) => {
 });
 
 function runHandle() {
-    outputFunc()
+    
     runBtn.addEventListener("click", () => {
+        outputFunc()
         if (!isopen) {
             document.querySelectorAll(".newDiv").forEach(e => {
                 e.style.display = "none"
