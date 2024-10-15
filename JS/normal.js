@@ -280,7 +280,7 @@ document.querySelectorAll(".bar").forEach((bar) => {
 });
 
 function runHandle() {
-
+    outputFunc()
     runBtn.addEventListener("click", () => {
         if (!isopen) {
             document.querySelectorAll(".newDiv").forEach(e => {
