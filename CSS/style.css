@@ -462,7 +462,7 @@ button img {
 }
 .line>*,
 textarea {
-    line-height: 1.1;
+    line-height: 2;
     letter-spacing: 1;
 }
 .k {
