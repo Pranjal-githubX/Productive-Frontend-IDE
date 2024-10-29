@@ -22,7 +22,7 @@ function fileListeners() {
         lineCounterUpdation()
         file.addEventListener('click', () => {
             if (file.innerText == "index.html") {
-                console.log('HTML');
+                // console.log('HTML');
                 HTML.style.zIndex = 10;
                 CSS.style.zIndex = -1;
                 JS.style.zIndex = -2;
@@ -61,7 +61,7 @@ function fileListeners() {
                 syncScroll();
 
             } else if (file.innerText == "style.css") {
-                console.log('CSS');
+                // console.log('CSS');
                 CSS.style.zIndex = 10;
                 HTML.style.zIndex = -1;
                 JS.style.zIndex = -2;
@@ -98,7 +98,7 @@ function fileListeners() {
                 box[1].classList.add("boxactive")
 
             } else {
-                console.log('JS');
+                // console.log('JS');
                 JS.style.zIndex = 10;
                 HTML.style.zIndex = -2;
                 CSS.style.zIndex = -1;
@@ -558,7 +558,7 @@ function sidebarHoveringAction() {
 
     minbarIcon.addEventListener("click", () => {
         if (!isExpanded) {
-            console.log('object');
+            // console.log('object');
             // for (const i of arr2) {
             //     sidebar.style. = 0
             // }
@@ -568,7 +568,7 @@ function sidebarHoveringAction() {
             isExpanded = true
         }
         else {
-            console.log('object');
+            // console.log('object');
             rightBar.style.width = "80%"
             sidebar.style.minWidth = "300px"
             sidebar.style.width = "15%"
@@ -578,7 +578,7 @@ function sidebarHoveringAction() {
 
     handleIcon.addEventListener("click", () => {
         if (!isExpanded) {
-            console.log('object 2a');
+            // console.log('object 2a');
             // for (const i of arr2) {
             //     sidebar.style. = 0
             // }
@@ -588,7 +588,7 @@ function sidebarHoveringAction() {
             isExpanded = true
         }
         else {
-            console.log('object 2b');
+            // console.log('object 2b');
             rightBar.style.width = "80%"
             sidebar.style.minWidth = "300px"
             sidebar.style.width = "15%"
